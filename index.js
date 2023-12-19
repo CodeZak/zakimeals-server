@@ -16,10 +16,8 @@ app.use("/users", userRouter);
 app.use("/orders", orderRouter); //
 app.use(mealRouter);
 
-app.use("/api",async (req, res) => {
-    await new Promise((resolve) => setTimeout(resolve, 15000));
-
-    res.send("Welcome to the server home page. after 15 s");
+app.use("/api", (req, res) => {
+     res.send("Welcome to the server home page. after 15 s");
 });
 
 app.use((req, res) => {
